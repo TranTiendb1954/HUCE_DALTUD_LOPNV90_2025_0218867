@@ -1,0 +1,160 @@
+<Window x:Class="DALTUDTXD.View.ViewTrangChu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DALTUDTXD.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="TÍNH TOÁN , NHẬP LIỆU " Height="700" Width="1000" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <!-- Màu theme -->
+        <SolidColorBrush x:Key="ChuDao1" Color="#FF1E1E2F"/>
+        <SolidColorBrush x:Key="ChuDao2" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ChuDao3" Color="#FF6A5ACD"/>
+        <SolidColorBrush x:Key="ChuDao4" Color="#FF2F2F4F"/>
+
+        <!-- Style cho button Ribbon bo góc + hover -->
+        <Style TargetType="Button" x:Key="RibbonRoundedButton">
+            <Setter Property="Background" Value="{StaticResource ChuDao3}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10" Padding="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF7B68EE"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF5A4DCB"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="135"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Ribbon -->
+        <Ribbon x:Name="rbncontrol" Background="{StaticResource ChuDao3}" Foreground="White">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu KeyTip="F" SmallImageSource="\Resources\Icons\Menu.png" Background="{StaticResource ChuDao2}">
+                    <RibbonApplicationMenuItem ImageSource="\Resources\Icons\User.png" Header="Tài khoản" Width="150"/>
+                    <RibbonApplicationMenuItem ImageSource="\Resources\Icons\Logout.png" Header="Đăng xuất" Width="150"/>
+                    <RibbonApplicationMenuItem ImageSource="\Resources\Icons\Settings.png" Header="Cài đặt" Width="150"/>
+                   
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <!-- Tab Tiết diện -->
+            <RibbonTab Header="Tiết diện" x:Name="tab_TietDien" BorderThickness="0 0 0 1">
+                <RibbonGroup Header="Material">
+                    <Button Style="{StaticResource RibbonRoundedButton}" x:Name="btnVatLieu" Click="btnVatLieu_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/steel.jpg" Width="30"/>
+                            <TextBlock Text="Material" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource RibbonRoundedButton}" x:Name="btnDoBenKeo" Click="btnDoBenKeo_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/steel.jpg" Width="30"/>
+                            <TextBlock Text="Tensile Strength" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource RibbonRoundedButton}" x:Name="btnGioiHanChay" Click="btnGioiHanChay_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/steel.jpg" Width="30"/>
+                            <TextBlock Text="Yield Strength" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+                <RibbonGroup Header="Thông số cột">
+                    <Button Style="{StaticResource RibbonRoundedButton}" x:Name="btnThongSoCot" Click="btnThongSoCot_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/5672201.png" Width="30"/>
+                            <TextBlock Text="Column parameters" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource RibbonRoundedButton}" x:Name="btnTietDien" Click="btnTietDien_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/i.png" Width="20"/>
+                            <TextBlock Text="Sections" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <!-- Tab Tính Toán -->
+            <RibbonTab Header="Tính Toán" x:Name="tab_TinhToan" BorderThickness="0 0 0 1">
+                <RibbonGroup Header="Tính toán">
+                    <Button Style="{StaticResource RibbonRoundedButton}" x:Name="btnTinhToanKNCNLechTam" Click="btnTinhToanKNCNLechTam_Click">
+                        <StackPanel>
+                            <Image Source="/Resources/Anh/suc.jpg" Width="35" Height="35"/>
+                            <TextBlock Text="KN chịu nén lệch tâm" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource RibbonRoundedButton}" x:Name="btnLuuDuAn" Click="btnLuuDuAn_Click">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="ContentSave" Width="30" Height="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Lưu dự án" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <!-- Tab Báo cáo -->
+            <RibbonTab Header="Báo cáo" x:Name="tab_BaoCao" BorderThickness="0 0 0 1">
+                <RibbonGroup Header="Xuất kết quả">
+                    <Button Style="{StaticResource RibbonRoundedButton}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="MicrosoftExcel" Width="30" Height="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Excel" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource RibbonRoundedButton}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="FilePdfBox" Width="30" Height="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="PDF" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <!-- Tab Hỗ trợ -->
+            <RibbonTab Header="Hỗ trợ" x:Name="tab_HoTro" BorderThickness="0 0 0 1">
+                <RibbonGroup Header="Thông tin">
+                    <Button Style="{StaticResource RibbonRoundedButton}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="30" Height="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Hướng dẫn" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource RibbonRoundedButton}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="AccountCogOutline" Width="30" Height="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Cài đặt nâng cao" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+
+        <!-- Frame hiển thị nội dung -->
+        <Frame x:Name="frame_Body" Grid.Row="1"/>
+    </Grid>
+</Window>
