@@ -1,0 +1,101 @@
+<Window x:Class="DALTUDTXD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Phần mềm tính toán cột thép chữ I"
+        Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Khai báo màu theme và style button bo góc -->
+    <Window.Resources>
+        <SolidColorBrush x:Key="ChuDao1" Color="#FF9999"/>
+        <SolidColorBrush x:Key="ChuDao2" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ChuDao3" Color="#FF6A5ACD"/>
+        <SolidColorBrush x:Key="ChuDao4" Color="#FF2F2F4F"/>
+
+        <!-- Style cho Button bo góc + hover -->
+        <Style TargetType="Button" x:Key="RoundedButton">
+            <Setter Property="Background" Value="{StaticResource ChuDao3}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="10" 
+                                BorderThickness="0"
+                                SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF7B68EE"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF5A4DCB"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource ChuDao1}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <!-- Background trái -->
+        <Border Background="{StaticResource ChuDao4}" Margin="10" CornerRadius="10" Grid.Row="0" Grid.RowSpan="3"/>
+
+        <!-- Logo -->
+        <Image Source="/Resources/Anh/1200px-LOGO_DHXD.png" Width="70" Height="60" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+        <!-- Tiêu đề chính -->
+        <TextBlock Grid.Column="1" Grid.Row="0"
+                   Text="Phần mềm tính toán cột thép chữ I"
+                   FontSize="26" FontWeight="Bold"
+                   Foreground="{StaticResource ChuDao2}" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <!-- Ghi chú -->
+        <Border Grid.Column="1" Grid.Row="1" Background="{StaticResource ChuDao4}" CornerRadius="10" Height="40" Margin="20,20,20,0">
+            <TextBlock Text="Ghi Chú" Foreground="White" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </Border>
+
+        <!-- Nút chức năng chính -->
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="20,50,20,0" VerticalAlignment="Top">
+            <Button Content="Tính Toán" Style="{StaticResource RoundedButton}" Click="btnTaoMoi_Click"/>
+            <Button Content="Mở tài liệu" Style="{StaticResource RoundedButton}"/>
+            <Button Content="Xuất báo cáo" Style="{StaticResource RoundedButton}"/>
+            <Button Content="Cài đặt" Style="{StaticResource RoundedButton}"/>
+        </StackPanel>
+
+        <!-- Nút hỗ trợ dưới cùng -->
+        <StackPanel Grid.Column="0" Grid.Row="2" Margin="20,20,20,20" VerticalAlignment="Bottom">
+            <Button Content="Hỗ Trợ" Style="{StaticResource RoundedButton}"/>
+            <Button Content="Tiêu chuẩn Việt Nam" Style="{StaticResource RoundedButton}"/>
+        </StackPanel>
+
+        <!-- Vùng hiển thị nội dung chính -->
+        <Border Grid.Column="1" Grid.Row="1" Margin="20,80,20,20" Background="{StaticResource ChuDao4}" CornerRadius="10">
+            <RichTextBox Background="{StaticResource ChuDao4}" Foreground="White" FontSize="14" Margin="10"
+                         VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <FlowDocument>
+                    <Paragraph>Chào mừng đến với phần mềm tính toán cột thép chữ I.</Paragraph>
+                    <Paragraph>Bạn có thể chọn các chức năng bên trái để bắt đầu.</Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </Border>
+    </Grid>
+</Window>
