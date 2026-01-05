@@ -6,8 +6,8 @@
 Tính năng phần mềm (theo sơ đồ phân rã chức năng):
 
 a) Tính năng đăng nhập – sử dụng tên tài khoản và mật khẩu có sẵn
-b) Tính năng nhập dữ liệu  – Nhập các thông số 
-c) Tính năng nhập thông số cột – Nhập các thông số cơ bản của cột
+b) Tính năng nhập dữ liệu  – Nhập các thông số cần nhập (hoặc không cần)
+c) Tính năng nhập thông số cột – Lấy từ etabs các thông số cơ bản của cột
 d) Tính năng tùy chọn thông số vật liệu – Chọn các thông số vật liệu có sẵn
 e) Tính năng kiểm tra – Kiểm tra về độ bền 
 4. Hướng dẫn cài đặt và chạy chương trình
