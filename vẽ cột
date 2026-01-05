@@ -1,0 +1,47 @@
+    public Path VeMC_Cot(Point Origin, double rongcanh, double daycanh, double caobung, double daybung)
+    {
+        double B = rongcanh;
+        double H = caobung + daycanh * 2;
+        //1. Khởi tạo đối tượng MC thông Path
+        Path Path_MC = new Path();
+        Path_MC.Name = "Cot";
+
+        //2. Khởi tạo Path.Data
+        PathGeometry path_geo_MC = new PathGeometry();
+        PathFigure pathFigure_MC = new PathFigure();
+        pathFigure_MC.StartPoint = new Point(Origin.X - B / 2, Origin.Y - H / 2); //điểm 0
+        PolyLineSegment PolySeg_MC = new PolyLineSegment();
+
+        //3. Thêm các điểm cho polyline
+        //PolySeg_MC.Points.Add(new Point(Origin.X - B/2, Origin.Y - H/2));  //điểm 1
+        PolySeg_MC.Points.Add(new Point(Origin.X + B / 2, Origin.Y - H / 2));  //điểm 1
+        PolySeg_MC.Points.Add(new Point(Origin.X + B / 2, Origin.Y - H / 2 + daycanh));  //điểm 2
+        PolySeg_MC.Points.Add(new Point(Origin.X + daybung / 2, Origin.Y - H / 2 + daycanh));  //điểm 3
+        PolySeg_MC.Points.Add(new Point(Origin.X + daybung / 2, Origin.Y + H / 2 - daycanh));  //điểm 4
+        PolySeg_MC.Points.Add(new Point(Origin.X + B / 2, Origin.Y + H / 2 - daycanh));  //điểm 5
+        PolySeg_MC.Points.Add(new Point(Origin.X + B / 2, Origin.Y + H / 2)); //điểm 6
+        PolySeg_MC.Points.Add(new Point(Origin.X - B / 2, Origin.Y + H / 2)); //điểm 7
+        PolySeg_MC.Points.Add(new Point(Origin.X - B / 2, Origin.Y + H / 2 - daycanh)); //điểm 8
+        PolySeg_MC.Points.Add(new Point(Origin.X - daybung / 2, Origin.Y + H / 2 - daycanh)); //điểm 9
+        PolySeg_MC.Points.Add(new Point(Origin.X - daybung / 2, Origin.Y - H / 2 + daycanh)); //điểm 10
+        PolySeg_MC.Points.Add(new Point(Origin.X - B / 2, Origin.Y - H / 2 + daycanh)); //điểm 11
+        PolySeg_MC.Points.Add(new Point(Origin.X - B / 2, Origin.Y - H / 2));
+        PolySeg_MC.Points.Add(new Point(Origin.X + B / 2, Origin.Y - H / 2));
+
+
+        //4. Thêm Polyline vào PathFigure
+        pathFigure_MC.Segments.Add(PolySeg_MC);
+
+        //5. Thêm PathFigure vào PathGeometry
+        path_geo_MC.Figures.Add(pathFigure_MC);
+
+        //6. Thêm PathGeometry vào Path.Data
+        Path_MC.Data = path_geo_MC;
+
+        //7. Tô
+        Path_MC.Fill = Brushes.Gray;
+        Path_MC.StrokeThickness = 1;
+        Path_MC.Stroke = Brushes.Blue;
+        return Path_MC;
+    }
+}
