@@ -1,0 +1,60 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1050" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="ZMp-Ed-oa-vn2UHfgb-E-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="Bắt&amp;nbsp;đầu" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="340" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZMp-Ed-oa-vn2UHfgb-E-7" target="ZMp-Ed-oa-vn2UHfgb-E-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-7" value="Nhập dự liệu đầu vào( vật liệu, kích thước,tải trọng):N_d,M_top_x, M_top_y,b_f,t_f,h_w,t_w,L,K_x, K_y" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="280" y="110" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZMp-Ed-oa-vn2UHfgb-E-10" target="ZMp-Ed-oa-vn2UHfgb-E-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZMp-Ed-oa-vn2UHfgb-E-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-10" value="Kiểm tra dữ liệu&amp;nbsp;đầu vào( t_f&amp;lt;t_w;...)" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="290" y="190" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZMp-Ed-oa-vn2UHfgb-E-12" target="ZMp-Ed-oa-vn2UHfgb-E-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-12" value="Tính toán&amp;nbsp;đặc trưng hình học" style="whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="340" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZMp-Ed-oa-vn2UHfgb-E-15" target="ZMp-Ed-oa-vn2UHfgb-E-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-15" value="Tính toán theo tại cả 2 mặt cắt: nén uốn, chịu cắt,&amp;nbsp;độ mảnh&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="290" y="370" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZMp-Ed-oa-vn2UHfgb-E-17" target="ZMp-Ed-oa-vn2UHfgb-E-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-17" value="Kiểm tra bền tiết diện với cá số liệu tính toán trên(&amp;nbsp;σ ≤&amp;nbsp; f.γc;&amp;nbsp;τmax&amp;nbsp; ≤&amp;nbsp; fv.γc;&lt;div&gt;λmax &amp;lt;[λ])&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="270" y="460" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZMp-Ed-oa-vn2UHfgb-E-19" target="ZMp-Ed-oa-vn2UHfgb-E-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-19" value="Tính toán&amp;nbsp;ổn&amp;nbsp;định cục bộ bản cánh/bụng" style="whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="270" y="600" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZMp-Ed-oa-vn2UHfgb-E-21" value="Kiểm tra&amp;nbsp;ổn&amp;nbsp;định cục bộ&lt;br&gt;bo / tf&amp;lt;[bo / tf ]&lt;div&gt;hw/tw&amp;lt;[hw/tw]&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="660" width="200" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

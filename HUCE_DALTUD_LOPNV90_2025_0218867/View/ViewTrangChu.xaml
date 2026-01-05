@@ -57,6 +57,7 @@
             <RowDefinition Height="135"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
 
         <!-- ================= RIBBON ================= -->
         <Ribbon x:Name="rbncontrol"
@@ -72,8 +73,10 @@
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
 
+            
             <!-- ========== TAB: TIẾT DIỆN ========== -->
             <RibbonTab Header="Tiết diện">
+                
                 <RibbonGroup Header="Material">
 
                     <Button Style="{StaticResource RibbonRoundedButton}"
@@ -108,7 +111,7 @@
                             Click="btnThongSoCot_Click">
                         <StackPanel>
                             <Image Source="/Resources/Anh/5672201.png" Width="30"/>
-                            <TextBlock Text="Column parameters" TextAlignment="Center"/>
+                            <TextBlock Text="Column parameters" TextAlignment="Center" Foreground="White"/>
                         </StackPanel>
                     </Button>
 
@@ -116,7 +119,7 @@
                             Click="btnTietDien_Click">
                         <StackPanel>
                             <Image Source="/Resources/Anh/i.png" Width="20"/>
-                            <TextBlock Text="Sections" TextAlignment="Center"/>
+                            <TextBlock Text="Sections" TextAlignment="Center" Foreground="White"/>
                         </StackPanel>
                     </Button>
 
@@ -175,7 +178,7 @@
                     <Button Style="{StaticResource RibbonRoundedButton}">
                         <StackPanel>
                             <Image Source="/Resources/Anh/help.png" Width="30"/>
-                            <TextBlock Text="Hướng dẫn" TextAlignment="Center"/>
+                            <TextBlock Text="Hướng dẫn" TextAlignment="Center" Foreground="White"/>
                         </StackPanel>
                     </Button>
 
@@ -183,7 +186,8 @@
                         <StackPanel>
                             <Image Source="/Resources/Anh/settings.png" Width="30"/>
                             <TextBlock Text="Cài đặt nâng cao"
-                                       TextAlignment="Center"/>
+                                       TextAlignment="Center"
+                                       Foreground="White"/>
                         </StackPanel>
                     </Button>
 
