@@ -71,39 +71,79 @@ namespace HUCE_DALTUD_LOPNV90_2025_0218867.Class
             else
                 return 332 / Math.Pow(domanhquyuoc, 2) * (51 - domanhquyuoc);
         }
+        #region tổ hợp
+        ///// <summary>
+        ///// Tính toán cho một cột tổ hợp, tính cả mặt cắt chân và đỉnh
+        ///// </summary>
+        //public KetQuaCucBo TinhToanCotToHop(
+        //    double N_Chan, double N_Dinh,
+        //    double An_Chan, double An_Dinh,
+        //    double f, double gamaC,
+        //    double Lamda_Chan, double Lamda_Dinh,
+        //    double E,
+        //    double hw, double tw, double bo, double tf)
+        //{
+        //    // Điều kiện bền
+        //    bool Ben_Chan = TinhToanBen(N_Chan, An_Chan, f, gamaC);
+        //    bool Ben_Dinh = TinhToanBen(N_Dinh, An_Dinh, f, gamaC);
+        //    bool Ben_Cuoi = Ben_Chan && Ben_Dinh;
 
-        /// <summary>
-        /// Tính toán cho một cột tổ hợp, tính cả mặt cắt chân và đỉnh
-        /// </summary>
+        //    // Ổn định tổng thể
+        //    bool OnDinh_Chan = TinhToanOnDinhTongThe(N_Chan, An_Chan, f, gamaC, Lamda_Chan, E);
+        //    bool OnDinh_Dinh = TinhToanOnDinhTongThe(N_Dinh, An_Dinh, f, gamaC, Lamda_Dinh, E);
+        //    bool OnDinh_Cuoi = OnDinh_Chan && OnDinh_Dinh;
+
+        //    // Ổn định cục bộ (giữ nguyên 1 lần, theo chân)
+        //    bool OnDinhCucBo = TinhToanOnDinhCucBo(hw, tw, Lamda_Chan, f, E, bo, tf);
+
+        //    // Khả năng chịu nén lệch tâm tối thiểu
+        //    double KNLechTam_Min = Math.Min(
+        //        TTKhaNangChiuNenLechtam(N_Chan, f, gamaC, An_Chan, Lamda_Chan, E),
+        //        TTKhaNangChiuNenLechtam(N_Dinh, f, gamaC, An_Dinh, Lamda_Dinh, E)
+        //    );
+
+        //    // Tổng hợp kết quả
+        //    return new KetQuaCucBo
+        //    {
+        //        Ben = Ben_Cuoi,
+        //        OnDinhTongThe = OnDinh_Cuoi,
+        //        OnDinhCucBo = OnDinhCucBo,
+        //        KNLechTam = KNLechTam_Min,
+        //        GhiChu = $"Chân: Ben={Ben_Chan}, OnDinh={OnDinh_Chan}; Đỉnh: Ben={Ben_Dinh}, OnDinh={OnDinh_Dinh}"
+        //    };
+        //}
+        #endregion
+
+        # region Tính toán cho một cột tổ hợp, tính cả mặt cắt chân và đỉnh        
+
         public KetQuaCucBo TinhToanCotToHop(
-            double N_Chan, double N_Dinh,
-            double An_Chan, double An_Dinh,
+            double N_Chan, double N_Dinh,     // Lực nén tại chân và đỉnh
+            double An_Chan, double An_Dinh,   // Diện tích tiết diện tại chân và đỉnh
             double f, double gamaC,
-            double Lamda_Chan, double Lamda_Dinh,
+            double Lamda_Chan, double Lamda_Dinh, // Hệ số độ mảnh tại chân và đỉnh
             double E,
-            double hw, double tw, double bo, double tf)
+            double hw, double tw, double bo, double tf) // Kích thước mặt cắt
         {
-            // Điều kiện bền
+            // Tính điều kiện bền
             bool Ben_Chan = TinhToanBen(N_Chan, An_Chan, f, gamaC);
             bool Ben_Dinh = TinhToanBen(N_Dinh, An_Dinh, f, gamaC);
             bool Ben_Cuoi = Ben_Chan && Ben_Dinh;
 
-            // Ổn định tổng thể
+            // Tính ổn định tổng thể
             bool OnDinh_Chan = TinhToanOnDinhTongThe(N_Chan, An_Chan, f, gamaC, Lamda_Chan, E);
             bool OnDinh_Dinh = TinhToanOnDinhTongThe(N_Dinh, An_Dinh, f, gamaC, Lamda_Dinh, E);
             bool OnDinh_Cuoi = OnDinh_Chan && OnDinh_Dinh;
 
-            // Ổn định cục bộ (giữ nguyên 1 lần, theo chân)
+            // Tính ổn định cục bộ (theo tiết diện)
             bool OnDinhCucBo = TinhToanOnDinhCucBo(hw, tw, Lamda_Chan, f, E, bo, tf);
 
-            // Khả năng chịu nén lệch tâm tối thiểu
-            double KNLechTam_Min = Math.Min(
-                TTKhaNangChiuNenLechtam(N_Chan, f, gamaC, An_Chan, Lamda_Chan, E),
-                TTKhaNangChiuNenLechtam(N_Dinh, f, gamaC, An_Dinh, Lamda_Dinh, E)
-            );
+            // Tính khả năng chịu nén lệch tâm tối thiểu
+            double KNLechTam_Chan = TTKhaNangChiuNenLechtam(N_Chan, f, gamaC, An_Chan, Lamda_Chan, E);
+            double KNLechTam_Dinh = TTKhaNangChiuNenLechtam(N_Dinh, f, gamaC, An_Dinh, Lamda_Dinh, E);
+            double KNLechTam_Min = Math.Min(KNLechTam_Chan, KNLechTam_Dinh);
 
             // Tổng hợp kết quả
-            return new KetQuaCucBo
+            KetQuaCucBo ketQua = new KetQuaCucBo
             {
                 Ben = Ben_Cuoi,
                 OnDinhTongThe = OnDinh_Cuoi,
@@ -111,6 +151,9 @@ namespace HUCE_DALTUD_LOPNV90_2025_0218867.Class
                 KNLechTam = KNLechTam_Min,
                 GhiChu = $"Chân: Ben={Ben_Chan}, OnDinh={OnDinh_Chan}; Đỉnh: Ben={Ben_Dinh}, OnDinh={OnDinh_Dinh}"
             };
+
+            return ketQua;
+            #endregion
         }
     }
 }
