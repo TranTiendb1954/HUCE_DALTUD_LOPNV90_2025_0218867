@@ -8,10 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/anh/excel.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/anh/help.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/anh/pdf.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/anh/save.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/anh/settings.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/anh/khop.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/anh/ngam.jpg")]
 
 

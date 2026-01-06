@@ -191,5 +191,9 @@
     <Resource Include="Resources\Anh\save.png" />
     <Resource Include="Resources\Anh\settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Anh\khop.jpg" />
+    <Resource Include="Resources\Anh\ngam.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

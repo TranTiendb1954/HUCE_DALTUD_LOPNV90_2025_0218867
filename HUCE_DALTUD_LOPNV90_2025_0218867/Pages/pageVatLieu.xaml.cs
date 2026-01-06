@@ -23,7 +23,7 @@ namespace HUCE_DALTUD_LOPNV90_2025_0218867.Pages
     /// </summary>
     public partial class pageVatLieu : Page
     {
-        public ObservableCollection<Material> Materials { get; set; } = new ObservableCollection<Material>();
+        public static ObservableCollection<Material> Materials { get; set; } = new ObservableCollection<Material>();
 
         private Material selectedMaterial = null;
 
@@ -106,8 +106,6 @@ namespace HUCE_DALTUD_LOPNV90_2025_0218867.Pages
         }
         public void loadDaTa2()
         {
-            Materials.Clear();
-
             Materials.Add(new Material
             {
                 TenVatLieu = "Thép CB400-V",
